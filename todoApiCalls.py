@@ -48,9 +48,9 @@ if __name__ == '__main__':
     if command == "get":
         result = get_todos()
     elif command == "create":
-        if len(args) < 3:
-            raise Exception("Missing arguments: Creating a TODO requires user_id, title, and completed.")
-        user_id, title, completed = args[0], args[1], args[2]
+        if len(args) != 3:
+            raise Exception("Wrong number of arguments: Creating a TODO requires user_id, title, and completed.")
+        user_id, title, completed = args
         result = create_todo(user_id, title, completed)
     elif command == "delete":
         if len(args) < 1:
